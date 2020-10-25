@@ -1,0 +1,58 @@
+<!--pages/home/home.wxml-->
+<view class="home">
+  <view class="top-bar">
+    <!-- 头部信息 -->
+    <view class="location">
+      <view class="location-shop">
+        <image src="../../assets/icon/location.png" class="location-icon"></image>
+        <view class="location-shop-name">
+          <view class="shop-name">北京物美多点超市</view>
+          <image src="../../assets/icon/arrow_right.png" class="arrow-right"></image>
+        </view>
+      </view>
+      <view class="shop-info">
+        <view class="shop-scan-code">
+          <image class="scan-code" src="../../assets/icon/scanCode.png"></image>
+        </view>
+        <view class="shop-list">
+          <image src="../../assets/icon/logo.png" class="shop-logo"></image>
+          <image src="../../assets/icon/arrow_down.png" class="arrow-down"></image>
+        </view>
+      </view>
+    </view>
+    <!-- 头部搜索框 -->
+    <view class="search-bar">
+      <image src="../../assets/icon/search.png" class="search-icon"></image>
+      <text>搜索商品</text>
+    </view>
+  </view>
+
+  <!-- 轮播广告 -->
+  <view class="banner">
+    <swiper class="banner-swiper" indicator-dots="{{bannerInfo.indicatorDots}}" autoplay="{{bannerInfo.autoplay}}" interval="{{bannerInfo.interval}}" circular="{{bannerInfo.circular}}" duration="{{bannerInfo.duration}}">
+      <block wx:for="{{bannerList}}" wx:key="index">
+        <swiper-item>
+          <view class="swiper-item {{item}}">
+            <image class="swiper-img" mode="aspectFill" src="{{item.picUrl}}"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="banner-info">
+      <image src="https://img.dmallcdn.com/dshop/202009/174d57cd-af63-45b7-80c1-c3d48c498e66_750H" class="banner-info-img" mode="aspectFit"></image>
+    </view>
+  </view>
+
+  <!-- 分类 -->
+  <view class="category">
+    <block wx:for="{{categoryList}}" wx:key="index">
+      <view class="category-item">
+        <image src="{{item.picUrl}}" class="category-img"></image>
+        <view class="category-title">{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 促销信息 -->
+  <image src="https://img10.360buyimg.com/tuangou/jfs/t1/123659/34/7923/352422/5f195d21E78c716fb/c14e496c2a0e59d8.png!q70.dpg" mode="widthFix" class="sale-info"></image>
+</view>
